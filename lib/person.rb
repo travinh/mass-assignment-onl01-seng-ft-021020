@@ -4,7 +4,10 @@ class Person
   attr_accessor :name, :birthday, :hair_color, :eye_color, :heigh,             :weight, :handed, :complexion, :t_shirt_size, 
                 :wrist_size, :glove_size, :pant_length, :pant_width
 
-def initialize
+def initialize(attribute)
+  attribute.each do |key,value|
+    key.send("#{name}=",value)
+  end
 end
 
 end
